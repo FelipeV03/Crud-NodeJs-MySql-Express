@@ -1,0 +1,63 @@
+<%- include ('partials/_header')%>
+<!-- <pre> <- data[0].id %> </pre> -->
+<div class="text-center">
+    <h1 class="display-5" style="text-decoration:none ; color: white;">Clientes</h1>
+</div>
+<div class="container mt-5">
+    <div class="main row justify-content-center">
+        <form action="/add" method="post" id="form" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-8  col-md-7 mb-3">
+                <label for="nombre">Nombre*</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Escriba su Nombre" required>
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="pais">Pais*</label>
+                <input class="form-control" type="text" id="pais" name="pais" placeholder="Escriba su Pais" required>
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="telefono">Telefono*</label>
+                <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Escriba su Telefono" required>
+            </div>
+            <div class="col-8  col-md-7">
+                <input class="btn btn-outline-success " type="submit" value="Enviar">
+            </div>
+        </form>
+        <div class="col-9 col-md-9 mt-5">
+            <table class="table table-stripdep table-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Pais</th>
+                        <th>Telefono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody  id="student-list">
+                    <!-- Aca le decimos que desde el indice 0 y hasta la longitudd de los datos que los vayamos aumentando de uno en uno -->
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++){ %>
+                            <tr>
+                                <!-- y que cuando empiece a recorrerlos los vamos obteniendo y que cada ves que obtengamos un datos se nos
+                                vaya crando una fila en la tabla de lista de datos-->
+                                <!-- Indice -->
+                                <td> <%= (i + 1) %> </td>
+                                <!-- Nombre -->
+                                <td> <%= data[i].nombre %> </td>
+                                <!-- Pais -->
+                                <td> <%= data[i].pais %> </td>
+                                <!-- Telefono -->
+                                <td> <%= data[i].telefono %> </td>
+                                <td>
+                                    <a href="/update/<%= data[i].id%>" class="btn btn-outline-warning">Editar</a>
+                                    <a href="/delete/<%= data[i].id%>" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include ('partials/_footer')%>

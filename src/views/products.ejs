@@ -1,0 +1,66 @@
+<%- include ('partials/_header') %>
+<!-- <link href="main.css" rel="stylesheet" type="text/css"/> -->
+<!-- <pre> <- data[0].id %> </pre> -->
+<div class="text-center">
+    <h1 class="display-5" style="text-decoration:none ; color: white;">Productos</h1>
+</div>
+<div class="container mt-5">
+    <div class="main row justify-content-center">
+        <form action="/addproduct" method="post" id="form" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-8  col-md-7 mb-3">
+                <label for="nombre">Nombre del Producto*</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Escriba el Nombre del Producto" required>
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="precio">Precio*</label>
+                <input class="form-control" type="text" id="precio" name="precio" placeholder="Escriba el Precio" required>
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="cantidad">Cantidad*</label>
+                <input class="form-control" type="number" id="cantidad" name="cantidad" placeholder="Escriba la Cantidad" required>
+            </div>
+            <div class="col-8  col-md-7">
+                <input class="btn btn-outline-success" type="submit" value="Enviar">
+                <!-- <button id="enviarProducto" class="btn btn-outline-success">Enviar</button> -->
+            </div>
+        </form>
+        <div class="col-9 col-md-9 mt-5">
+            <table class="table table-stripdep table-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="student-list">
+                    <!-- Aca le decimos que desde el indice 0 y hasta la longitudd de los datos que los vayamos aumentando de uno en uno -->
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++){ %>
+                            <tr>
+                                <!-- y que cuando empiece a recorrerlos los vamos obteniendo y que cada ves que obtengamos un datos se nos
+                                vaya crando una fila en la tabla de lista de datos-->
+                                <!-- Indice -->
+                                <td> <%= (i + 1) %> </td>
+                                <!-- Nombre -->
+                                <td> <%= data[i].nombre %> </td>
+                                <!-- Pais -->
+                                <td> <%= data[i].precio %> </td>
+                                <!-- Telefono -->
+                                <td> <%= data[i].cantidad %> </td>
+                                <td>
+                                    <a href="/updateproduct/<%= data[i].id%>" class="btn btn-outline-warning">Editar</a>
+                                    <a href="/deleteproduct/<%= data[i].id%>" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include ('partials/_footer') %>
+<!-- <script src="prueba/enviaProducto.js"></script> -->

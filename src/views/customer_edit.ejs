@@ -1,0 +1,21 @@
+<%- include ('partials/_header')%>
+<div class="container mt-5">
+    <div class="main row justify-content-center">
+        <form action="/update/<%= data.id %>" method="post" id="student-form" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-8  col-md-7 mb-3">
+                <label for="nombre">Nombre*</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" value="<%= data.nombre%>">
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="pais">Pais*</label>
+                <input class="form-control" type="text" id="pais" name="pais" value="<%= data.pais%>">
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="telefono">Telefono*</label>
+                <input class="form-control" type="number" id="telefono" name="telefono" value="<%= data.telefono%>">
+            </div>
+            <div class="col-8  col-md-7">
+                <input class="btn btn-success add-btn" type="submit" value="Editar">
+            </div>
+        </form>
+<%- include ('partials/_footer')%>

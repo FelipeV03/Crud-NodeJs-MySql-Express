@@ -1,0 +1,21 @@
+<%- include ('partials/_header')%>
+<div class="container mt-5">
+    <div class="main row justify-content-center">
+        <form action="/updateproduct/<%= data.id %>" method="post" id="student-form" class="row justify-content-center mb-4" autocomplete="off">
+            <div class="col-8  col-md-7 mb-3">
+                <label for="nombre">Nombre del Producto*</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" value="<%= data.nombre %>">
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="precio">Precio*</label>
+                <input class="form-control" type="text" id="precio" name="precio" value="<%= data.precio %>">
+            </div>
+            <div class="col-8  col-md-7 mb-3">
+                <label for="cantidad">Cantidad*</label>
+                <input class="form-control" type="number" id="cantidad" name="cantidad" value="<%= data.cantidad %>">
+            </div>
+            <div class="col-8  col-md-7">
+                <input class="btn btn-outline-success" type="submit" value="Actualizar">
+            </div>
+        </form>
+<%- include ('partials/_footer')%>

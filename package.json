@@ -1,0 +1,24 @@
+{
+  "name": "crudnodejsmysqlexpress",
+  "version": "1.0.0",
+  "description": "Crud con NodeJS Express y como base de datos MySql",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Felipe Vargas",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-myconnection": "^1.0.4",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "sweetalert2": "^11.4.29"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
