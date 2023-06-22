@@ -8,17 +8,17 @@ const express = require ("express");
 // Aca lo inicializamos
 const app = express();
 // Este modulo se encarga de unir directorios
-const path = require("path")
+const path = require("path");
 // Este modulo se encarga de darnos estilos para neustra consola
-const colors = require("colors")
+const colors = require("colors");
 // Este modulo nos ayuda a registrar las peticiones de los usuarios antes de procesarlas
-const morgan = require("morgan")
+const morgan = require("morgan");
 // Este modulo nos ayuda a conectarnos a una base de datos MySql
-const mysql = require("mysql")
+const mysql = require("mysql");
 // Este modulo nos ayuda a que al momento de realizar peticiones a la base de datos MySql nos sea mucho mas sencillo
-const myconnection = require("express-myconnection")
+const myconnection = require("express-myconnection");
 // Este modulo nos va ayudar con las alertas
-const Swal = require("sweetalert2")
+const Swal = require("sweetalert2");
 
 
 
